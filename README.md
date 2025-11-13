@@ -14,4 +14,4 @@ export default defineConfig({
 ```
 
 ## The code is live at:
-[kabitha](https://kabitha-sharma.onrender.com/){:target="_blank"}
+/md [kabitha](https://kabitha-sharma.onrender.com/){:target="_blank"}
