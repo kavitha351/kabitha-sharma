@@ -8,5 +8,16 @@
     "frontend": "npm run dev --prefix front-end",
     "backend": "nodemon back-end/index.js",
     "both": "concurrently \"npm run frontend\" \"npm run backend\""
-  }
+  },
+  "name": "kabitha-sharma",
+  "version": "1.0.0",
+  "description": "``` import { defineConfig } from 'vite' import react from '@vitejs/plugin-react'",
+  "main": "index.js",
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.1.2",
+    "nodemon": "^3.1.11",
+    "vite": "^7.3.0"
+  },
+  "author": "",
+  "license": "ISC"
 }

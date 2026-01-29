@@ -20,6 +20,7 @@ router.post('/',[
             email: req.body.email,
             feedback: req.body.feedback
         })
+        console.log(user);
         res.json(user);
     } catch (error) {
         console.log(error.message);
