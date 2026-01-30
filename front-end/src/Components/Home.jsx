@@ -6,9 +6,10 @@ const Home = () => {
 
   const [feed, setFeed] = useState({ name: '', email: '', feedback: '' });
 
+
   const handleClick = async (e) => {
     e.preventDefault(); // Correct the method name
-    const response = await fetch('http://localhost:5000/send_feed', {
+    const response = await fetch(`/send_feed`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
