@@ -42,20 +42,14 @@ The focus of this project is on real-world DevOps practices, including container
 
 ## 🧩 Architecture Overview
 
-Browser
-|
-V
-Single Domain (ingress)
-|
-V
-Nginx Ingress
-VV
-Frontend Service Backend Service
-(Nginx)(Express)
-|
-V
-MongoDB(PVC)
-
+```mermaid
+flowchart TD
+    Browser --> Ingress["Single Domain (Ingress)"]
+    Ingress --> Nginx["NGINX Ingress"]
+    Nginx --> Frontend["Frontend Service (NGINX)"]
+    Nginx --> Backend["Backend Service (Express)"]
+    Backend --> Mongo["MongoDB (PVC)"]
+```
 
 ---
 
