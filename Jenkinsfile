@@ -8,21 +8,31 @@ pipeline {
   stages {
     stage('Checkout Code') {
       steps {
-        git branch: 'main',
-          url: 'https://github.com/kavitha351/kabitha-sharma.git'
+        checkout scm
       }
     }
-    stage('Build Backend Image') {
+    stage('Prepare Image Tag') {
       steps {
         script {
-          docker.build("${BACKEND_IMAGE}:latest", "./back-end")
+          env.IMAGE_TAG= GIT_COMMIT.take(7)
         }
       }
     }
-    stage('Build Frontend Image') {
-      steps {
-        script {
-          docker.build("${FRONTEND_IMAGE}:latest", "./front-end")
+    stage('Build Images') {
+      parallel {
+        stage('Build Backend Image') {
+          steps {
+            script {
+              docker.build("${BACKEND_IMAGE}:${IMAGE_TAG}", "./back-end")
+            }
+          }
+        }
+        stage('Build Frontend Image') {
+          steps {
+            script {
+              docker.build("${FRONTEND_IMAGE}:${IMAGE_TAG}","./front-end")
+            }
+          }
         }
       }
     }
