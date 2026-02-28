@@ -51,3 +51,12 @@ Thumbs.db
 # Coverage / Build artifacts
 # =========================
 coverage/
+
+# ========================
+# Terraform state files
+#=========================
+.terraform/
+*.tfstate
+*.tfstate.backup
+terraform.tfvars
+terraform.tfvars.json
