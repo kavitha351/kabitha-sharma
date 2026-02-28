@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  backend:
+    image: kavithakumari062001/pf-backend:c521945
+    container_name: backend
+    restart: always
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGO_URI="mongodb://mongo:27017/MySet"
+    depends_on:
+      - mongo
+  frontend:
+    image: kavithakumari062001/pf-frontend:c521945
+    container_name: frontend
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+  mongo:
+    image: mongo:4.4
+    container_name: mongo
+    restart: always
+    volumes:
+      - mongo-data:/data/db
+volumes:
+  mongo-data:
