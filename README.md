@@ -61,6 +61,18 @@ flowchart TD
 ```
 
 ---
+## Kubernetes Deployment Architecture
+
+```mermaid
+flowchart TD
+    Browser --> Ingress["Single Domain (Ingress)"]
+    Ingress --> Nginx["NGINX Ingress Controller"]
+    Nginx --> Frontend["Frontend Service (NGINX)"]
+    Nginx --> Backend["Backend Service (Express)"]
+    Backend --> Mongo["MongoDB (Persistent Volume)"]
+```
+
+---
 
 ## 🧪 API Endpoints
 
