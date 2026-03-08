@@ -44,11 +44,20 @@ The focus of this project is on real-world DevOps practices, including container
 
 ```mermaid
 flowchart TD
-    Browser --> Ingress["Single Domain (Ingress)"]
-    Ingress --> Nginx["NGINX Ingress"]
-    Nginx --> Frontend["Frontend Service (NGINX)"]
-    Nginx --> Backend["Backend Service (Express)"]
-    Backend --> Mongo["MongoDB (PVC)"]
+    Dev[Developer Push] --> GitHub[GitHub Repository]
+    GitHub --> Webhook[GitHub Webhook]
+    Webhook --> Jenkins[Jenkins CI Server]
+
+    Jenkins --> Build[Build Docker Images]
+    Build --> DockerHub[Push Images to DockerHub]
+
+    DockerHub --> Ansible[Run Ansible Playbook]
+    Ansible --> AppServer[Application EC2 Server]
+
+    AppServer --> Compose[Docker Compose]
+    Compose --> Frontend[Frontend Container]
+    Compose --> Backend[Backend Container]
+    Compose --> Mongo[MongoDB Container]
 ```
 
 ---
