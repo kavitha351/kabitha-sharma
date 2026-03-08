@@ -40,7 +40,7 @@ The focus of this project is on real-world DevOps practices, including container
 
 ---
 
-## 🧩 Architecture Overview
+## 🧩 CI/CD Pipeline Architecture
 
 ```mermaid
 flowchart TD
