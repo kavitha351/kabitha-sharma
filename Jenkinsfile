@@ -60,7 +60,7 @@ pipeline {
         sshagent(['ec2-ssh-key']) {
           sh """
             cd ansible
-            ansible-playbook -i /Desktop/Ansible docker-setup.yaml --extra-vars "IMAGE_TAG=${IMAGE_TAG}"
+            ansible-playbook docker-setup.yaml --extra-vars "IMAGE_TAG=${IMAGE_TAG}"
           """ 
        }
       }
