@@ -32,7 +32,7 @@ const Home = () => {
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className='home'>
         <div className='Intro'>
-          <h1>Kavitha Kumari</h1>
+          <h1>Kavitha Kumari.</h1>
           <p>
             I a web developer with knowledge in HTML, CSS, Javascript, ReactJs and know programming languages like Java, Python worked with apis and know cloud technology AWS.
           </p>
@@ -95,3 +95,4 @@ const Home = () => {
 };
 
 export default Home;
+
