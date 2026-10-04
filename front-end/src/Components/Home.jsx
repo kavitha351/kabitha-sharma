@@ -9,7 +9,7 @@ const Home = () => {
 
   const handleClick = async (e) => {
     e.preventDefault(); // Correct the method name
-    const response = await fetch(`/send_feed`, {
+    const response = await fetch(`${import.meta.env.VITE_API_URL}/send_feed`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
