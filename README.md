@@ -126,8 +126,5 @@ export default defineConfig({
 Kavitha Kumari 
 DevOps | Cloud | Kubernetes | AWS
 
-Portfolio: https://kabitha-sharma.onrender.com/
-
-
 ## The code is live at:
 [kabitha](https://kabitha-sharma.onrender.com/)
