@@ -60,3 +60,6 @@ coverage/
 *.tfstate.backup
 terraform.tfvars
 terraform.tfvars.json
+
+plan.txt
+*.env
