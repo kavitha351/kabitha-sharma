@@ -1,10 +1,41 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Home.css';
 import { motion } from "framer-motion";
+import NET from 'vanta/dist/vanta.net.min';
+import * as THREE from 'three';
 
 const Home = () => {
 
+  const vantaRef = useRef(null);
+  const vantaEffect = useRef(null);
+  window.THREE = THREE;
+
   const [feed, setFeed] = useState({ name: '', email: '', feedback: '' });
+
+  useEffect(() => {
+    vantaEffect.current = NET({
+      el: vantaRef.current,
+      THREE: window.THREE,
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      color: 0x00aaff,
+      backgroundColor: 0x111111,
+      points: 10.00,
+      maxDistance: 20.00,
+      spacing: 18.00
+    });
+
+    return () => {
+      if (vantaEffect.current) {
+        vantaEffect.current.destroy();
+      }
+    };
+  }, []);
 
 
   const handleClick = async (e) => {
@@ -30,7 +61,7 @@ const Home = () => {
   };
 
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className='home'>
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className='home' ref={vantaRef}>
         <div className='Intro'>
           <h1>Kavitha Kumari.</h1>
           <p>
@@ -38,7 +69,7 @@ const Home = () => {
           </p>
       </div>
       <div className='forms'>
-          <h1>Contact me!</h1>
+          <h1>Connect with me!</h1>
           <form className='form-inputs'>
           <div>
             <input

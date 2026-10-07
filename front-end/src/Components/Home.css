@@ -1,36 +1,48 @@
 /* Introduction design */
 .home{
-    background-color: black;
-    color: black;
+    position: relative;
+    background-color: #111111;
+    color: white;
     padding-bottom: 40px;
+    overflow: hidden;
+}
+.home canvas {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 0 !important;
+}
+.Intro,
+.forms,
+.my-contacts {
+    position: relative;
+    z-index: 1;
 }
 .Intro{
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    box-shadow: 0px 0px 25px 5px black inset; 
-    background-image: 
+    box-shadow: 0px 0px 25px 5px black inset;
+    background: transparent;
+    /* background-image: 
     linear-gradient(to bottom, rgba(0, 0, 0, 0.043) 50%, rgb(0, 0, 0)), 
-    url('https://media1.giphy.com/media/xUA7b4arnbo3THfzi0/giphy.gif'); 
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-blend-mode: multiply;
-    /* background-color: purple; */
+    url('https://media1.giphy.com/media/xUA7b4arnbo3THfzi0/giphy.gif');  */
 }
 .Intro h1{
     font-size: 5ch;
     background: transparent;
-    color: black;
+    color: white;
 }
 .Intro p{
     padding: 5px 0px;
     background: transparent;
     width: 95%;
-    color: black;
+    color: white;
     font-weight: bold;
 }
 .forms{
@@ -38,14 +50,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* padding: 20px 0px; */
-    /* box-shadow: 0px 0px 25px 5px white inset;
-    color: white; */
-    background-image: url("https://cdn.dribbble.com/users/6903/screenshots/1956820/media/06022d14e7fa7eaa196c9e6214557800.gif");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-blend-mode: multiply;
+    background: transparent;
+    /* background-image: url("https://cdn.dribbble.com/users/6903/screenshots/1956820/media/06022d14e7fa7eaa196c9e6214557800.gif"); */
 }
 .forms h1{
     font-size: 5ch;
@@ -56,8 +62,9 @@
     border: 1px solid rgba(128, 128, 128, 0.251);
     padding: 40px 30px 30px 30px;
     margin: 50px 0px 20px 0px;
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(6px);
     border-radius: 20px;
+    background: rgba(0, 0, 0, 0.15);
 }
 .form-inputs:hover{
     border: 1px solid white;
