@@ -83,11 +83,30 @@ const Home = () => {
       <div className='my-contacts'>
         <h1>My Contacts: </h1>
         <ul>
-          <li>kavithakumari351@gmail.com</li>
-          <li>9100473060</li>
-          <li>https://github.com/Origamini</li>
-          <li>https://www.linkedin.com/in/kavitha-kumari-65016a272</li>
-          <li>https://www.youtube.com/@Kiwicoders256</li>
+          <li>
+            <a href="mailto:kavithakumari351@gmail.com">📧 Email 
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/kavitha351" target="_blank" rel="noreferrer">
+              🐙 GitHub
+            </a>
+          </li>
+          <li>
+            <a href="https://www.hackerrank.com/profile/Kavithakumari351" target="_blank" rel="noreferrer">
+             🟢 HackerRank
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/kavitha-kumari-65016a272" target="_blank" rel="noreferrer">
+              💼 LinkedIn
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/@Kiwicoders256" target="_blank" rel="noreferrer">
+              ▶️ YouTube
+            </a>
+          </li>
         </ul>
       </div>
     </motion.div>

@@ -2,6 +2,7 @@
 .home{
     background-color: black;
     color: black;
+    padding-bottom: 40px;
 }
 .Intro{
     height: 100vh;
@@ -98,6 +99,8 @@
 .my-contacts{
     text-align: center;
     padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
 }
 .my-contacts h1{
     color: white;
@@ -106,11 +109,13 @@
 }
 .my-contacts ul{
     list-style-type: none;
-    /* font-size: 17px; */
     color: white;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 .my-contacts ul li{
-    margin: 5px 0;
+    margin: 10px 0;
     transition: color 0.3s ease;
 }
 @media (max-width: 320px){
