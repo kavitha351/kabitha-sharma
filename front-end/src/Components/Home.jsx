@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Home.css';
 import { motion } from "framer-motion";
-import NET from 'vanta/dist/vanta.net.min';
+import NET from 'vanta/dist/vanta.fog.min';
 import * as THREE from 'three';
 
 const Home = () => {
@@ -17,17 +17,14 @@ const Home = () => {
       el: vantaRef.current,
       THREE: window.THREE,
       mouseControls: true,
-      touchControls: true,
-      gyroControls: false,
-      minHeight: 200.00,
-      minWidth: 200.00,
-      scale: 1.00,
-      scaleMobile: 1.00,
-      color: 0x00aaff,
-      backgroundColor: 0x111111,
-      points: 10.00,
-      maxDistance: 20.00,
-      spacing: 18.00
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200.00,
+  minWidth: 200.00,
+  highlightColor: 0x9ecf53,
+  midtoneColor: 0xff00b4,
+  lowlightColor: 0xf2ff,
+  baseColor: 0xffffff
     });
 
     return () => {
@@ -62,15 +59,15 @@ const Home = () => {
 
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className='home' ref={vantaRef}>
-        <div className='Intro'>
-          <h1>Kavitha Kumari.</h1>
-          <p>
-            I a web developer with knowledge in HTML, CSS, Javascript, ReactJs and know programming languages like Java, Python worked with apis and know cloud technology AWS.
-          </p>
+      <div className='Intro'>
+        <h1>Kavitha Kumari.</h1>
+        <p>
+          I a web developer with knowledge in HTML, CSS, Javascript, ReactJs and know programming languages like Java, Python worked with apis and know cloud technology AWS.
+        </p>
       </div>
       <div className='forms'>
-          <h1>Connect with me!</h1>
-          <form className='form-inputs'>
+        <h1>Connect with me!</h1>
+        <form className='form-inputs'>
           <div>
             <input
               type="text"
@@ -115,7 +112,7 @@ const Home = () => {
         <h1>My Contacts: </h1>
         <ul>
           <li>
-            <a href="mailto:kavithakumari351@gmail.com">📧 Email 
+            <a href="mailto:kavithakumari351@gmail.com">📧 Email
             </a>
           </li>
           <li>
@@ -125,7 +122,7 @@ const Home = () => {
           </li>
           <li>
             <a href="https://www.hackerrank.com/profile/Kavithakumari351" target="_blank" rel="noreferrer">
-             🟢 HackerRank
+              🟢 HackerRank
             </a>
           </li>
           <li>

@@ -7,19 +7,19 @@ const Navbar = () => {
 
   // define colors for each route
   const colors = {
-    '/': "rgba(60, 110, 63, 0.46)",
-    '/about': "rgba(110, 60, 72, 0.46)",
-    '/experience': "rgba(107, 110, 60, 0.46)",
-    '/skills': "rgba(60, 60, 60, 0.46)",
+    '/': " red",
+    '/about': "yellow",
+    '/experience': "green",
+    '/skills': "white",
   };
 
   // get the current color based on current path (default will be white)
   const currentColor = colors[location.pathname] || "white";
 
   return (
-      <div className='links' style={{background: currentColor}}>
+      <div className='links' style={{ '--active-link-color': currentColor}}>
           <li>
-            <NavLink to="/">Home</NavLink>
+            <NavLink to="/" end>Home</NavLink>
           </li>
           <li className="nav-item">
             <NavLink to="/about">About</NavLink>

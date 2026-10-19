@@ -1,18 +1,26 @@
 /* Introduction design */
 .home{
     position: relative;
-    background-color: #111111;
-    color: white;
+    isolation: isolate;
     padding-bottom: 40px;
     overflow: hidden;
+    box-shadow: 0px 0px 25px 5px black inset;
 }
 .home canvas {
     position: absolute !important;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100% !important;
     height: 100% !important;
-    z-index: 0 !important;
+    z-index: -1 !important;
+    pointer-events: none;
+}
+.home::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    box-shadow: 0 0 25px 5px black inset;
+    pointer-events: none;
+    z-index: 10;
 }
 .Intro,
 .forms,
@@ -27,22 +35,16 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    box-shadow: 0px 0px 25px 5px black inset;
     background: transparent;
-    /* background-image: 
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.043) 50%, rgb(0, 0, 0)), 
-    url('https://media1.giphy.com/media/xUA7b4arnbo3THfzi0/giphy.gif');  */
 }
 .Intro h1{
     font-size: 5ch;
     background: transparent;
-    color: white;
 }
 .Intro p{
     padding: 5px 0px;
     background: transparent;
     width: 95%;
-    color: white;
     font-weight: bold;
 }
 .forms{
@@ -51,11 +53,9 @@
     flex-direction: column;
     align-items: center;
     background: transparent;
-    /* background-image: url("https://cdn.dribbble.com/users/6903/screenshots/1956820/media/06022d14e7fa7eaa196c9e6214557800.gif"); */
 }
 .forms h1{
     font-size: 5ch;
-    color: white;
     background: transparent;
 }
 .form-inputs{
@@ -75,7 +75,6 @@
     width: 300px;
     height: 50px;
     /* border: none; */
-    color: white;
     padding-left: 15px;
     margin: 5px 0px 50px 0px;
     font-family: 'Courier New', Courier, monospace;
@@ -86,7 +85,6 @@
     background: transparent;
     margin-bottom: 10px;
     padding: 5px;
-    color: white;
 }
 .button{
     height: 40px;
@@ -97,7 +95,6 @@
     transition: 1s ease-in-out;
     margin: 20px 0px;
     cursor: pointer;
-    color: white;
 }
 .button:hover{
     background: red;
@@ -110,13 +107,11 @@
     flex-direction: column;
 }
 .my-contacts h1{
-    color: white;
     font-size: 5ch;
     padding: 15px 0px;
 }
 .my-contacts ul{
     list-style-type: none;
-    color: white;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
