@@ -1,52 +1,285 @@
-/* Introduction design */
-.home{
-    position: relative;
-    isolation: isolate;
-    padding-bottom: 40px;
-    overflow: hidden;
-    box-shadow: 0px 0px 25px 5px black inset;
+
+.home {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 100vh;
+  padding-bottom: 40px;
+  background: #070d18;
+  color: #edf8ff;
 }
+
+/* Vanta canvas */
 .home canvas {
-    position: absolute !important;
-    inset: 0;
-    width: 100% !important;
-    height: 100% !important;
-    z-index: -1 !important;
-    pointer-events: none;
+  position: absolute !important;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: -1 !important;
+  pointer-events: none !important;
+
+  /* Blur the animation itself */
+  filter: blur(3px);
+  transform: scale(1.02);
 }
-.home::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    box-shadow: 0 0 25px 5px black inset;
-    pointer-events: none;
-    z-index: 10;
+
+/* Darken the background to soften the particles */
+.home::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: rgba(7, 13, 24, 0.35);
 }
-.Intro,
+
+/* Keep your content above the overlay */
+.home > .Intro,
+.home > .forms,
+.home > .my-contacts {
+  position: relative;
+  z-index: 1;
+}
+
+
 .forms,
 .my-contacts {
-    position: relative;
-    z-index: 1;
+  position: relative;
+  z-index: 1;
 }
-.Intro{
-    min-height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background: transparent;
+
+.Intro {
+  min-height: 90vh;
+  width: 100%;
+  max-width: 1250px;
+  margin: auto;
+  padding: 80px 6%;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 56px;
+  background: transparent;
 }
-.Intro h1{
-    font-size: 5ch;
-    background: transparent;
+
+.hero-copy {
+  min-width: 0;
 }
-.Intro p{
-    padding: 5px 0px;
-    background: transparent;
-    width: 95%;
-    font-weight: bold;
+
+.eyebrow {
+  color: #55dcff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
 }
+
+.hero-copy h1 {
+  margin: 18px 0;
+  color: #f2f8ff;
+  font-size: clamp(2.6rem, 5vw, 4.8rem);
+  line-height: 1.08;
+  overflow-wrap: anywhere;
+}
+
+.hero-copy h1 span {
+  color: #31d7ff;
+}
+
+.hero-copy h2 {
+  color: #69dfff;
+  font-size: clamp(1.1rem, 2vw, 1.6rem);
+}
+
+.hero-description {
+  max-width: 530px;
+  margin: 24px 0;
+  color: #b7c9dc;
+  font-size: 1rem;
+  line-height: 1.9;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.hero-actions a {
+  display: inline-block;
+  padding: 13px 18px;
+  border: 1px solid #26cfff;
+  border-radius: 8px;
+  background: rgba(17, 193, 240, 0.12);
+  color: #8ceaff;
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+
+.hero-actions a:hover {
+  background: #20c8f5;
+  color: #06111c;
+  box-shadow: 0 0 24px rgba(32, 200, 245, 0.25);
+}
+
+.hero-actions .secondary-action {
+  border-color: #36536b;
+  background: rgba(10, 22, 38, 0.5);
+  color: #d1e4f5;
+}
+
+.terminal {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(65, 198, 245, 0.35);
+  border-radius: 14px;
+  background: rgba(5, 13, 25, 0.88);
+  box-shadow: 0 0 35px rgba(0, 179, 255, 0.09);
+  backdrop-filter: blur(12px);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.terminal:hover {
+  border-color: rgba(65, 215, 255, 0.75);
+  box-shadow: 0 0 38px rgba(0, 179, 255, 0.15);
+}
+
+.terminal-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-bottom: 1px solid #1b3045;
+  background: rgba(17, 31, 48, 0.8);
+}
+
+.terminal-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.terminal-dots span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #ff6474;
+}
+
+.terminal-dots span:nth-child(2) {
+  background: #ffc857;
+}
+
+.terminal-dots span:nth-child(3) {
+  background: #39dda0;
+}
+
+.terminal-title {
+  flex: 1;
+  color: #a9bfd3;
+  font-family: monospace;
+  font-size: 0.8rem;
+}
+
+.online-status {
+  color: #48e6ad;
+  font-size: 0.65rem;
+}
+
+.terminal-body {
+  min-height: 265px;
+  padding: 24px;
+  font-family: "Courier New", monospace;
+}
+
+.terminal-muted {
+  color: #708ba5;
+  font-size: 0.8rem;
+}
+
+.terminal-prompt {
+  color: #e3f6ff;
+  overflow-wrap: anywhere;
+}
+
+.terminal-prompt > span:first-child {
+  color: #48e6ad;
+}
+
+.terminal-cursor {
+  color: #5de5ff;
+  animation: blink 0.9s steps(2, start) infinite;
+}
+
+.terminal-output {
+  min-height: 48px;
+  color: #75e7ff;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.terminal-options {
+  margin-top: 24px;
+  border-top: 1px solid #1b3045;
+  padding-top: 14px;
+}
+
+.terminal-options p {
+  color: #819bb4;
+  font-size: 0.75rem;
+}
+
+.command {
+  margin: 5px 5px 0 0;
+  padding: 7px 9px;
+  border: 1px solid #29465e;
+  border-radius: 5px;
+  background: #0a1727;
+  color: #a9cce3;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.75rem;
+  transition: 0.2s ease;
+}
+
+.command:hover,
+.command.active {
+  border-color: #35d7ff;
+  background: rgba(35, 204, 255, 0.12);
+  color: #78e6ff;
+}
+
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 800px) {
+  .Intro {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    gap: 38px;
+    padding: 90px 7% 60px;
+  }
+
+  .terminal-body {
+    padding: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .terminal-cursor {
+    animation: none;
+  }
+
+  .hero-actions a,
+  .terminal,
+  .command {
+    transition: none;
+  }
+}
+
 .forms{
     position: relative;
     display: flex;
