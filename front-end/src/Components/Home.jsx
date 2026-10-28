@@ -209,7 +209,7 @@ const handleClick = async (e) => {
       </section>
       <div className='forms'>
         <h1>Connect with me!</h1>
-        <form className='form-inputs'>
+        <form className='form-inputs' onSubmit={handleClick}>
           <div>
             <input
               type="text"
@@ -241,11 +241,7 @@ const handleClick = async (e) => {
               onChange={onChange}
             ></textarea>
           </div>
-          <button
-            type="submit"
-            className="button"
-            onClick={handleClick}
-          >
+          <button type="submit" className="button">
             Submit
           </button>
         </form>
